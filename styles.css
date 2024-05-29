@@ -1,0 +1,131 @@
+body {
+    background-color: beige;
+}
+
+.calculator {
+    width: 350px;
+    max-width: 400px;
+    margin: 20px auto;
+    border: 5px solid black;
+    border-radius: 60px;
+    margin-top: 10svh;
+    overflow: hidden;
+    display: flex; 
+    flex-direction: column;
+    background-color: #0c0c0c;
+}
+
+.nums {
+    padding-top: 20px;
+    width: 100%; 
+    background-color: #222831;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+
+.bot {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+td {
+    text-align: center;
+}
+
+#result {
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+    font-size: 60px;
+    width: 90%;
+    height: 15svh;
+    padding-top: 10svh;
+    text-align: right;
+    white-space: nowrap; 
+    overflow: hidden;
+    border: none;
+    align-items: flex-end;
+    background-color: #0c0c0c;
+    color: #fffafa;
+    display: block;
+}
+  
+button {
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+    width: 70px;
+    height: 70px;
+    font-size: 18px;
+    background-color: #0c0c0c;
+    border: 1px solid #222831;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 5px;
+    color: white;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+button img {
+    display: block;
+    margin: 0 auto;
+  
+}
+
+.operator {
+    background-color: #f0f0f0;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+  
+#deleteButton {
+    border: none;
+    width: 80%;
+    background-color: #FFCCCB; 
+}
+
+#clearall {
+    border: none;
+    width: 80%;
+    background-color: #EE4B2B;
+}
+
+footer {
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+    background-color: #0c0c0c;
+    color: #fffafa;
+    padding: 15px;
+    position: fixed;      
+    bottom: 0;             
+    left: 50%;            
+    transform: translateX(-50%); 
+}
+@media (max-width: 768px) {
+    .calculator {
+      max-width: 350px; 
+    }
+    button {
+      height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .calculator {
+          max-width: 95%; 
+    }
+    button {
+          height: 45px; 
+    }
+    #result {
+          font-size: 30px; 
+    }
+}
