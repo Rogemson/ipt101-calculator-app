@@ -11,8 +11,14 @@
 </head>
 <body>
     <div class="calculator">
+      <div class="status-bar"> 
+        <img width="20" height="20" src="https://img.icons8.com/material-rounded/24/ffffff/high-connection.png" alt="high-connection" id="signalIcon"/>
+        <img width="20" height="20" src="https://img.icons8.com/ios-glyphs/30/ffffff/wifi--v1.png" alt="wifi--v1" id="wifiIcon"/>
+        <img width="20" height="20" src="https://img.icons8.com/ios-filled/50/ffffff/empty-battery.png" alt="empty-battery" id="batteryIcon"/>
+      </div>
       <table>
         <tr>
+          <button id="themeToggle"><img width="20" height="20" src="https://img.icons8.com/material-outlined/24/moon.png" alt="moon" id="themeIcon"/></button>
           <td colspan="4"><input type="text" id="result" disabled></td>
         </tr>
       </table>
@@ -51,12 +57,15 @@
                         <td><button class="operator" onclick="calculate()"><img width="30" height="30" src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/30/000000/external-equal-essentials-pack-tanah-basah-glyph-tanah-basah.png" alt="external-equal-essentials-pack-tanah-basah-glyph-tanah-basah"/></button></td>
                         <td><button class="operator" onclick="divide('/')"><img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/divide.png" alt="divide"/></button></td>
                       </tr>
-                </table>   
+                </table>
+                <div class="home-bar">
+                  <img width="100" height="40" src="https://img.icons8.com/sf-black/64/ffffff/horizontal-line.png" alt="horizontal-line" id="homebar"/>
+                </div>
             </div>        
           </div>
-        
+          
       </div>
 
-      <script src="script.js"></script>   
+      <script src="script.js"></script>
 </body>
 </html>
