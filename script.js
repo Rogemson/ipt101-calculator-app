@@ -1,5 +1,5 @@
 let currentInput = '';
-let currenOperator = '';
+let currentOperator = '';
 
 function appendNumber(number) {
   currentInput += number;
@@ -8,31 +8,31 @@ function appendNumber(number) {
 
 function clearResult() {
   currentInput = '';
-  currenOperator = '';
+  currentOperator = '';
   updateDisplay()
 }
 
 function add() {
-  currenOperator = '+';
-  currentInput += currenOperator;
+  currentOperator = '+';
+  currentInput += currentOperator;
   updateDisplay()
 }
 
 function minus() {
-  currenOperator = '-';
-  currentInput += currenOperator;
+  currentOperator = '-';
+  currentInput += currentOperator;
   updateDisplay()
 }
 
 function multiply() {
-  currenOperator = '*';
-  currentInput += currenOperator;
+  currentOperator = '*';
+  currentInput += currentOperator;
   updateDisplay()
 }
 
 function divide() {
-  currenOperator = '/';
-  currentInput += currenOperator;
+  currentOperator = '/';
+  currentInput += currentOperator;
   updateDisplay()
 }
 
@@ -40,7 +40,7 @@ function calculate() {
   const result = eval(currentInput);
   document.getElementById('result').value = result;
   currentInput = result.toString();
-  currenOperator = '';
+  currentOperator = '';
 }
 
 function updateDisplay() {
@@ -58,3 +58,43 @@ function deleteOne() {
   currentInput = currentInput.slice(0, -1); 
   updateDisplay();
 }
+
+const themeToggle = document.getElementById('themeToggle');
+const sunIcon = document.getElementById('sunIcon'); 
+const body = document.body;
+
+const preferredTheme = localStorage.getItem('theme');
+if (preferredTheme === 'light') {
+    body.classList.remove('light-mode'); 
+    themeIcon.src = "https://img.icons8.com/forma-bold/24/ffffff/sun.png";
+}
+
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('light-mode');
+
+    if (body.classList.contains('light-mode')) {
+        themeIcon.src = "https://img.icons8.com/material-outlined/24/moon.png";
+        themeIcon.style.filter = 'invert(0)';
+    } else {
+        themeIcon.src = "https://img.icons8.com/forma-bold/24/000000/sun.png"; 
+        themeIcon.style.filter = 'invert(1)'; 
+    }
+    
+    if (body.classList.contains('light-mode')) {
+        signalIcon.style.filter = 'invert(1)';
+        wifiIcon.style.filter = 'invert(1)';
+        batteryIcon.style.filter = 'invert(1)';
+        homebar.style.filter = 'invert(1)';
+    } else {
+        signalIcon.style.filter = 'invert(0)';
+        wifiIcon.style.filter = 'invert(0)';
+        batteryIcon.style.filter = 'invert(0)';
+        homebar.style.filter = 'invert(0)';
+    }
+
+    if (body.classList.contains('light-mode')) {
+        localStorage.setItem('theme', 'light');
+    } else {
+        localStorage.setItem('theme', 'dark');
+    }
+});
