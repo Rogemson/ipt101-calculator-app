@@ -2,11 +2,51 @@ body {
     background-color: beige;
 }
 
+#themeToggle {
+    margin-right: 1rem;
+    width: 2em;
+    height: 2em; 
+    justify-content: center;
+    background-color: transparent; 
+    border: none;                 
+    cursor: pointer;            
+    margin-left: auto;
+}
+
+body.light-mode {
+    background-color: beige; 
+}
+
+body.light-mode .calculator {
+    border-color: #ddd;        
+    background-color: #EEEEEE;    
+    color: #333;
+}
+
+body.light-mode #result {
+    background-color: #EEEEEE;
+    color: #0c0c0c;
+}
+
+body.light-mode .nums {
+    background: #fffafa;
+}
+
+body.light-mode button {
+    background-color: #fff;
+    color: #0c0c0c;
+    border-color: #ddd;
+}
+
+body.light-mode button:hover {
+    background-color: #eee;
+}
+
 .calculator {
-    width: 350px;
-    max-width: 400px;
+    width: 22em;
+    max-width: 40em;
     margin: 20px auto;
-    border: 5px solid black;
+    border: 5px solid #23272a;
     border-radius: 60px;
     margin-top: 10svh;
     overflow: hidden;
@@ -18,7 +58,7 @@ body {
 .nums {
     padding-top: 20px;
     width: 100%; 
-    background-color: #222831;
+    background-color: #161515;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
 }
@@ -36,13 +76,27 @@ td {
     text-align: center;
 }
 
+.status-bar {
+    margin-left: 1rem;
+    padding: 2rem;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 1rem;  
+}
+
+.status-bar img:last-child { 
+    margin-left: auto; 
+    margin-right: 20px;
+}
+
 #result {
     font-family: 'Jost', sans-serif;
     font-weight: 700;
-    font-size: 60px;
     width: 90%;
-    height: 15svh;
-    padding-top: 10svh;
+    height: 10svh;
+    padding-top: 3svh;
     text-align: right;
     white-space: nowrap; 
     overflow: hidden;
@@ -60,7 +114,7 @@ button {
     height: 70px;
     font-size: 18px;
     background-color: #0c0c0c;
-    border: 1px solid #222831;
+    border: 1px solid #0c0c0c;
     border-radius: 20px;
     cursor: pointer;
     margin: 5px;
@@ -96,34 +150,29 @@ button img {
     background-color: #EE4B2B;
 }
 
-footer {
-    font-family: 'Jost', sans-serif;
-    font-weight: 700;
-    width: 100%;
-    text-align: center;
-    background-color: #0c0c0c;
-    color: #fffafa;
-    padding: 15px;
-    position: fixed;      
-    bottom: 0;             
-    left: 50%;            
-    transform: translateX(-50%); 
+.home-bar {
+    justify-content: center;
+    display: flex;
+    margin: 0 auto;
+    height: 20px;
 }
+
 @media (max-width: 768px) {
     .calculator {
-      max-width: 350px; 
+        max-width: 95%; 
     }
     button {
-      height: 50px;
+      height: 70px;
     }
 }
 
 @media (max-width: 480px) {
     .calculator {
-          max-width: 95%; 
+        margin-top: 3em;
+        max-width: 95%; 
     }
     button {
-          height: 45px; 
+          height: 70px; 
     }
     #result {
           font-size: 30px; 
